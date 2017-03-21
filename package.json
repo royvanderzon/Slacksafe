@@ -28,7 +28,12 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node app.js"
+    "start": "nodemon app.js",
+    "build" : "npm run css:minify && npm run js:compress",
+    "css:minify" : "uglifycss ./public/src/css/styles.css > ./public/dist/css/styles.min.css",
+    "js:minify" : "uglifyjs ./public/dist/js/* > ./public/dist/js/bundle.min.js",
+    "js:browserify" : "browserify ./public/src/js/main.js -o ./public/dist/js/bundle.js",
+    "js:compress" : "npm run js:browserify && npm run js:minify"
   },
   "keywords": [],
   "author": "Widesi",

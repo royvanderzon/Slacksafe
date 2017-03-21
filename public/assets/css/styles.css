@@ -240,18 +240,6 @@ ul.domains li:first-child::before {
     content: '';
 }
 
-
-/*.showOverlay {
-    opacity: 1;
-    animation: showOverlay .4s forwards ease-in-out;
-    top: 0;
-}
-
-.hideOverlay {
-    animation: hideOverlay .4s forwards ease-in-out;
-}
-*/
-
 @keyframes showOverlay {
     0% {
         opacity: : 0;
