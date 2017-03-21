@@ -1,1 +1,7 @@
-module.exports = function(){ return 'hoi'}
+var ding = {
+	hallo : function(){
+		return 'welkom'
+	}
+}
+ 
+module.exports = ding   

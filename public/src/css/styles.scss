@@ -13,11 +13,11 @@ body {
     margin: 0;
     height: 100%;
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden; 
     overflow-y: scroll;
 }
 
-xmp {
+xmp {  
     background-color: #f7f7f7;
     padding-left: 0.938em;
     padding-right: 0.938em;
@@ -31,7 +31,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6 { 
     color: #ee6e73;
 }
 
@@ -242,7 +242,7 @@ ul.domains li:first-child::before {
 
 @keyframes showOverlay {
     0% {
-        opacity: : 0;
+        opacity: 0;
         top: -9999999px;
         left: -9999999px;
     }
@@ -265,7 +265,7 @@ ul.domains li:first-child::before {
 
 @keyframes hideOverlay {
     0% {
-        opacity: : 1;
+        opacity: 1;
         top: 0;
         left: 0;
     }

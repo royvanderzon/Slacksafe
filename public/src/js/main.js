@@ -1,3 +1,3 @@
 var foo = require('./test.js');
 
-console.log(foo())
+console.log(foo.hallo())      

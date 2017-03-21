@@ -26,14 +26,28 @@
     "sitemap": "^1.5.0",
     "underscore": "^1.8.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "browserify": "^14.1.0",
+    "node-sass": "^4.5.1",
+    "nodemon": "^1.11.0",
+    "parallelshell": "^2.0.0",
+    "uglify-js": "^2.8.14",
+    "uglifycss": "0.0.25",
+    "watchify": "^3.9.0"
+  },
   "scripts": {
-    "start": "nodemon app.js",
-    "build" : "npm run css:minify && npm run js:compress",
-    "css:minify" : "uglifycss ./public/src/css/styles.css > ./public/dist/css/styles.min.css",
-    "js:minify" : "uglifyjs ./public/dist/js/* > ./public/dist/js/bundle.min.js",
-    "js:browserify" : "browserify ./public/src/js/main.js -o ./public/dist/js/bundle.js",
-    "js:compress" : "npm run js:browserify && npm run js:minify"
+    "css:minify": "uglifycss ./public/dist/css/styles.css > ./public/dist/css/styles.min.css",
+    "css:compress": "node-sass ./public/src/css/styles.scss ./public/dist/css/styles.css",
+    "css:watch": "nodemon -e scss -x \"npm run css:compress && npm run css:minify\"",
+    "js:minify": "uglifyjs ./public/dist/js/bundle.js > ./public/dist/js/bundle.min.js",
+    "js:browserify": "browserify ./public/src/js/main.js -o ./public/dist/js/bundle.js",
+    "js:compress": "npm run js:browserify && npm run js:minify",
+    "js:watch": "watchify ./public/src/js/main.js -o \"uglifyjs -cm > ./public/dist/js/bundle.min.js\"",
+    "client:watch": "parallelshell \"npm run css:watch\" \"npm run js:watch\"",
+    "server:watch": "parallelshell \"nodemon app.js\"",
+    "all:watch" : "parallelshell \"npm run css:watch\" \"npm run js:watch\" \"nodemon app.js\"",
+    "build": "npm run css:minify && npm run js:compress",
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "Widesi",
