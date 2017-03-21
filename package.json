@@ -1,0 +1,36 @@
+{
+  "name": "fundaserver",
+  "version": "0.0.1",
+  "description": "fundaserver",
+  "private": true,
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "body-parser": "~1.10.0",
+    "connect-flash": "~0.1.1",
+    "cookie-parser": "~1.0.0",
+    "dotenv": "^4.0.0",
+    "ejs": "~0.8.5",
+    "express": "~4.9.0",
+    "express-myconnection": "^1.0.4",
+    "express-session": "~1.9.3",
+    "moment": "^2.17.1",
+    "mongodb": "^2.2.25",
+    "mongojs": "^2.4.0",
+    "mongoose": "^4.9.1",
+    "morgan": "^1.8.1",
+    "path": "0.12.7",
+    "request": "^2.81.0",
+    "sitemap": "^1.5.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "Widesi",
+  "license": "MIT"
+}

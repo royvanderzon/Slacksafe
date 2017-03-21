@@ -1,0 +1,40 @@
+<%- include ./include/header.ejs %>
+<%- include ./include/nav.ejs %>
+
+<main>
+
+    <div class="inner">
+        
+        <% if(typeof user === 'object'){ %>
+                <section id="members" class="members-container">
+                    <a href="/user/<%= team_id %>">&#10094; Back</a>
+                    <script>console.log(<%- JSON.stringify(user) %>)</script>
+                    <hr>
+                    <div id="singleUserContainer" class="<%= (user.hacked.hacked ? 'hacked' : 'save') %>">
+                        <article style="border-color: #<%= user.color %>;">
+                            <img data-avatar="" src="<%= user.profile.image_192 %>" alt="">
+                            <div class="article_inner">
+                                <h1 data-email=""><%= user.profile.email %></h1>
+                                <p data-name=""><%= user.profile.real_name %></p>
+                            </div>
+                            <% if(user.hacked.hacked){ %>
+                            <ul class="domains">
+                                <li><strong>Hacked databases</strong></li>
+                                <% user.hacked.data.forEach(function(el){ %>
+                                    <li><%= el.Name %> - <a href="http://<%= el.Domain %>" target="_blank"><%= el.Domain %></a></li>
+                                <% }) %>
+                            </ul>
+                            <% } %>
+                        </article>
+                    </div>
+                </section>
+        <% }else{ %>
+                <section id="members" class="members-container">
+                    <a href="/user/<%= team_id %>">&#10094; Back</a>
+                </section>
+        <% } %>
+
+    </div>
+</main>
+
+<%- include ./include/footer.ejs %>

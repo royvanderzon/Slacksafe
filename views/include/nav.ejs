@@ -1,0 +1,20 @@
+<!-- NAVIGATION -->
+<% if(message.length > 0){ %><%- message %><% }; %>
+<div class="nav_wrapper">
+    <label for="collapse_menu" id="collapse_btn">__</label>
+    <input id="collapse_menu" type="checkbox">
+    <nav>
+        <h1>Are we safe?</h1>
+        <ul>
+            <li><a href="/" aria-label="Home, current page">Home</a></li>
+            <li><a href="/get_token">Insert token</a></li>
+            <li><a href="/teams">Teams</a></li>
+            <li><a href="https://api.slack.com/docs/oauth-test-tokens" target="_blank" >Get your token</a></li>
+        </ul>
+
+    </nav>
+</div>
+
+<header>
+    <h1><%- title %></h1>
+</header>

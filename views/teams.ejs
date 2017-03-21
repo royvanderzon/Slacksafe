@@ -1,0 +1,31 @@
+<%- include ./include/header.ejs %>
+<%- include ./include/nav.ejs %>
+
+<button class="autoplay hidden"><span class="auto_stop hidden">&#x025FC;</span><span class="auto_play hidden">&#9658;</span>AUTOPLAY</button>
+
+<div class="disable hidden"></div>
+
+<main>
+
+    <div class="inner">
+
+        <section id="main-content" class="team-container">
+            <div id="usersListContainer">
+                <div class="usersList" id="usersList">
+                    <% teams.forEach(function(el,i){ %>
+                    <article id="<%= el._id %>" class="signleUser " style="border-color:<%= el.counters.color %>">
+                        <a href="/user/<%= el._id %>" data-link="">
+                            <img data-avatar="" src="<%= el.team.team.icon.image_44 %>" alt="">
+                            <h2 data-email=""><%= el.team.team.name %> (<strong><%= el.counters.total %></strong>)</h2>
+                            <p data-name=""><em>checked (<strong><%= el.counters.totalChecked %>/<%= el.counters.total %></strong>)<% if(el.counters.hackedPercent != 'NaN'){ %><br>hacked (<strong><%= el.counters.hackedPercent %>%</strong>)<% }; %></em></p>
+                        </a>
+                    </article>
+                    <% }) %>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<%- include ./include/footer.ejs %>

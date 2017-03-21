@@ -1,0 +1,58 @@
+<%- include ./include/header.ejs %>
+<%- include ./include/nav.ejs %>
+
+<main>
+
+    <div class="inner">
+
+        <section id="main-content">
+            <div class="form-control">
+                <form action="/user/<%= users._id %>" method="post">
+                    <select id="sorting" class="sorting" name="sorting">
+                        <option <% if(sorting == 'email'){ %> selected <% } %> value="email">email</option>
+                        <option <% if(sorting == 'hacked'){ %> selected <% } %> value="hacked">hacked</option>
+                        <option <% if(sorting == 'save'){ %> selected <% } %> value="save">save</option>
+                        <option <% if(sorting == 'name'){ %> selected <% } %> value="name">name</option>
+                        <option <% if(sorting == 'reverse'){ %> selected <% } %> value="reverse">reverse</option>
+                        <option <% if(sorting == 'color'){ %> selected <% } %> value="color">color</option>
+                    </select>
+                    <button class="btn" type="submit">SORTEREN</button>
+                    <a id="checkSafe" class="checkSafe button">Are we safe?</a>
+                </form>
+                <!-- <select name="slackKey" id="slackKey" class="slackKey">
+                    <option value="token=xoxp-138372543094-136986511584-138625989684-3293e890bb7274d53ff724a5901a8d02">Ocelot</option>
+                    <option value="token=xoxp-13771535971-137383130642-142415615014-1363a63765ea49f9102fc7ea0911cdc1">Minor web</option>
+                </select> -->
+            </div>
+            <hr>
+            <div id="usersListContainer">
+                <div class="usersList" id="usersList">
+                <% users.user.members.forEach(function(el,i){ %>
+                    <% if(typeof el.profile.email !== 'undefined'){ %>
+                        <% if(typeof el.hacked === 'object'){ %>
+                            <article id="<%= el.id %>" class="signleUser <%= (el.hacked.hacked ? 'hacked' : 'save') %>" style="border-color: #<%= el.color %>;">
+                                <a href="/single/<%= users._id %>/<%= el.id %>" data-link="">
+                                    <h2 data-email=""><%= el.profile.email %></h2>
+                                    <p data-name=""><%= el.name %></p>
+                                    <img data-avatar="" src="<%= el.profile.image_48 %>" alt="">
+                                </a>
+                            </article>
+                        <% } else { %>
+                            <article id="<%= el.id %>" class="signleUser no-email" style="border-color: #<%= el.color %>;">
+                                <a href="/user/checkSafe/<%= users._id %>/<%= el.id %>" data-link="">
+                                    <h2 data-email=""><%= el.profile.email %></h2>
+                                    <p data-name=""><%= el.name %></p>
+                                    <img data-avatar="" src="<%= el.profile.image_48 %>" alt="">
+                                </a>
+                            </article>
+                        <% }; %>
+                    <% } %>
+                <% }) %>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<%- include ./include/footer.ejs %>
