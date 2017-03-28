@@ -17,7 +17,15 @@
                         <option <% if(sorting == 'color'){ %> selected <% } %> value="color">color</option>
                     </select>
                     <button class="btn" type="submit">SORTEREN</button>
-                    <a id="checkSafe" class="checkSafe button">Are we safe?</a>
+                    <% if(currentlyCheckking == users._id && chekkingSafe.length > 0){ %>
+                        <a href="/user/arewesafe/restart/<%= users._id %>" id="checkSafe" class="checkSafe button">RESTART</a>
+                    <% } else if(chekkingSafe.length > 0){ %>
+                        <a href="/user/<%= currentlyCheckking %>" id="checkSafe" class="checkSafe button">Chekking <strong><%= chekkingSafe %></strong></a>
+                    <% } else { %>
+                        <a href="/user/arewesafe/<%= users._id %>" id="checkSafe" class="checkSafe button">Are we safe?</a>
+                    <% } %>
+
+
                 </form>
                 <!-- <select name="slackKey" id="slackKey" class="slackKey">
                     <option value="token=xoxp-138372543094-136986511584-138625989684-3293e890bb7274d53ff724a5901a8d02">Ocelot</option>

@@ -8,13 +8,15 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 
 var mongojs = require('mongojs');
-var connectionString = '127.0.0.1:27017/minor-funda-server'
-    // var connectionString = 'localhost:27017/minor-funda-server'
 
-var databaseUrl = "127.0.0.1:27017/minor-funda-server";
+var databaseUrl = "127.0.0.1:27017/slacksafe";
 
 
 var slacksafe = {
+    config : {
+        chekkingSafe : '',
+        currentlyCheckking : ''
+    },
     insertSlackTeam: function(data, cb) {
         var db = mongojs(databaseUrl, ["teams"]);
         db.teams.save(data, function(err, saved) {

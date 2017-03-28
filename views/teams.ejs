@@ -10,6 +10,10 @@
     <div class="inner">
 
         <section id="main-content" class="team-container">
+            <% if(teams.length < 1){ %>
+            <h2>Don't have any teams yet?</h2>
+            <p>Add one <a href="/get_token"><strong>here</strong></a>!</p>
+            <% } else { %>
             <div id="usersListContainer">
                 <div class="usersList" id="usersList">
                     <% teams.forEach(function(el,i){ %>
@@ -23,9 +27,39 @@
                     <% }) %>
                 </div>
             </div>
+            <% } %>
         </section>
 
     </div>
 </main>
+
+<script>
+
+    // register(SERVICE_WORKER_URL)
+    // register('/sw.js')
+
+    // var currentServiceWorker = null;
+    // navigator.serviceWorker.register('/sw.js').then(function(serviceWorkerRegistration) { 
+    //     if (navigator.serviceWorker.controller) {
+    //         currentServiceWorker = navigator.serviceWorker.controller;
+    //     } else {
+    //         currentServiceWorker = serviceWorkerRegistration.active;
+    //     }
+    // });
+
+    // function send_message_to_sw(msg){
+    //     currentServiceWorker.postMessage("Client 1 says '"+msg+"'");
+    // }
+
+    if('serviceWorker' in navigator){
+        // Handler for messages coming from the service worker
+        navigator.serviceWorker.addEventListener('message', function(event){
+            // console.log(event.data);
+            // event.ports[0].postMessage("Client 1 Says 'Hello back!'");
+        });
+    }
+
+    // send_message_to_sw('hoi')
+</script>
 
 <%- include ./include/footer.ejs %>

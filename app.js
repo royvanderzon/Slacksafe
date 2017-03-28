@@ -48,9 +48,23 @@ app.use('/user', userRoutes);
 app.use('/get_token', tokenRoutes);
 app.use('/single', singleRoutes);
 
+app.get('/offline', function(req, res) {
+    res.render('offline', {
+        title: 'Offline',
+        message: req.flash('message')
+    })
+})
+
 app.get('/', function(req, res) {
     res.render('index', {
         title: 'Home',
+        message: req.flash('message')
+    })
+})
+
+app.get('*', function(req, res) {
+    res.render('index', {
+        title: '404 not found',
         message: req.flash('message')
     })
 })

@@ -1,0 +1,16 @@
+{
+	"name" : "Slack Safe",
+	"short_name" : "Slack Safe hacked app",
+	"start_url" : "/?homescreen = 1",
+	"display" : "standalone",
+	"orientation" : "portrait",
+	"theme_color" : "#ee6e73",
+	"background_color": "#FFFFFF",
+	"icons" : [
+		{
+			"src" : "/icon.png",
+			"sizes" : "1024x1024",
+			"type":"image/png"
+		}
+	]
+}

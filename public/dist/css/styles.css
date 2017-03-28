@@ -287,6 +287,25 @@ ul.domains li:first-child::before {
 .request_denied h2 {
   color: #333; }
 
+.loader {
+  width: 4em;
+  height: 4em;
+  border: 0.2em solid #ecf0f1;
+  border-top: 0.2em solid royalblue;
+  animation: rotate 1s linear infinite;
+  border-radius: 100%;
+  cursor: progress; }
+
+.loader-small {
+  height: 17px;
+  width: 17px; }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
 .hacked h1,
 .hacked h2,
 .hacked a {
@@ -374,7 +393,8 @@ ul.domains li:first-child::before {
 .usersList > article {
   flex-basis: 48%; }
 
-button, a.button {
+button,
+a.button {
   text-decoration: none;
   color: #fff;
   background-color: #26a69a;
@@ -397,7 +417,10 @@ button, a.button {
   font-size: 0.938em;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2); }
 
-button:hover, a.button:hover, button:focus, a.button:focus {
+button:hover,
+a.button:hover,
+button:focus,
+a.button:focus {
   background-color: #00838f; }
 
 textarea,
