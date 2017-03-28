@@ -12,13 +12,29 @@ switched to db slacksafe
 ```
 
 ## Setup NodeJS
-
+### NodeJS and NPM
 Download [NodeJS with NPM](https://nodejs.org/en/download/).
-
+### Installing modules
 Run the following command in `/the_root_of_your_slacksafe_dir`
 ```bash
 $ npm install
 ```
+### Running the app
+```bash
+$ npm run css:minify
+$ npm run css:compress
+$ npm run css:watch
+$ npm run js:minify
+$ npm run js:browserify
+$ npm run js:compress
+$ npm run js:watch
+$ npm run client:watch
+$ npm run server:watch
+$ npm run all:watch
+$ npm run build
+$ npm run start
+```
+
 
 ## Setting up SlackSafe
 
