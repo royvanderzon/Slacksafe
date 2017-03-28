@@ -19,7 +19,7 @@ Run the following command in `/the_root_of_your_slacksafe_dir`
 ```bash
 $ npm install
 ```
-### Running the app
+## Run & build SlackSafe
 Minify the css to `/public/dist/css/styles.min.css`
 ```bash
 $ npm run css:minify
@@ -68,7 +68,3 @@ Watch server js on filechange restart app.js (nodemon)
 ```bash
 $ npm run start
 ```
-
-
-## Setting up SlackSafe
-
