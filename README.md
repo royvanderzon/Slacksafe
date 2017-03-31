@@ -91,7 +91,8 @@ Based on the [Have I Been Pownd](https://haveibeenpwned.com/) API that is very u
 - HTML5 native validation
 - Req.flash for messages to minimize traffic
 
-
-![alt tag](https://raw.githubusercontent.com/royvanderzon/slacksafe/master/serverside-slacksafe.png)
-
+### With javascript only
 ![alt tag](https://raw.githubusercontent.com/royvanderzon/slacksafe/master/client-slacksafe.png)
+
+### With Serverside rendering only
+![alt tag](https://raw.githubusercontent.com/royvanderzon/slacksafe/master/serverside-slacksafe.png)
