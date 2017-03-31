@@ -7,7 +7,7 @@
                 <form action="/get_token/token" method="post">
                     <p>Please insert your slack token here. Don't have a token? Get it <a href="https://api.slack.com/docs/oauth-test-tokens" target="_blank"><strong>here</strong></a>.</p>
                     <label for="slackKeyInput" class="hidden">Slack token</label>
-                    <input type="text" id="slackKeyInput" name="slackKeyInput" placeholder="xoxp-0000000-0000000">
+                    <input type="text" id="slackKeyInput" name="slackKeyInput" required placeholder="xoxp-0000000-0000000" autofocus pattern=".{15,}" title="Slack token">
                     <button class="enterKey">ENTER</button>
                     <p class="message"></p>
                 </form>

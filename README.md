@@ -79,3 +79,19 @@ Slacksafe is a simple and effective way to screen all your Slack teams. You can 
 Within seconds you can see witch teams are safe, and witch are not.
 
 Based on the [Have I Been Pownd](https://haveibeenpwned.com/) API that is very up-to date you are always in track of the leaks in your company!
+
+## Improvements
+- Minify/uglify/compressed/Gzipped JS, CSS
+- No JS used (exept for service worker)
+- Only small images are loaded
+- System fonts only
+- Offline browsing (system worker)
+- NPM tasks
+- Critical CSS
+- HTML5 native validation
+- Req.flash for messages to minimize traffic
+
+
+![alt tag](https://raw.githubusercontent.com/royvanderzon/slacksafe/master/serverside-slacksafe.png)
+
+![alt tag](https://raw.githubusercontent.com/royvanderzon/slacksafe/master/client-slacksafe.png)

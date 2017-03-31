@@ -1,7 +1,7 @@
-var ding = {
-	hallo : function(){
-		return 'welkom'
-	}
-}
+// var ding = {
+// 	hallo : function(){
+// 		return 'welkom'
+// 	}
+// }
  
-module.exports = ding   
+// module.exports = ding   
